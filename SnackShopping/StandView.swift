@@ -39,6 +39,7 @@ struct StandView: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(snack.name)
+                Text(String(format: "$%.2f", snack.price)).foregroundColor(.secondary)
             }
         }
     }
