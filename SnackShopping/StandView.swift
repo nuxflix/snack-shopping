@@ -28,7 +28,9 @@ struct StandView: View {
         NavigationView {
             List {
                 ForEach(menu) { snack in
-                    row(snack)
+                    NavigationLink(destination: detail(snack)) {
+                        row(snack)
+                    }
                 }
             }
             .navigationTitle("Snack Shopping")
@@ -42,6 +44,17 @@ struct StandView: View {
                 Text(String(format: "$%.2f", snack.price)).foregroundColor(.secondary)
             }
         }
+    }
+
+    private func detail(_ snack: CounterSnack) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(snack.category).font(.caption).foregroundColor(.secondary)
+            Text(snack.name).font(.largeTitle)
+            Text(String(format: "$%.2f", snack.price))
+            Text(snack.note)
+            Spacer()
+        }
+        .padding()
     }
 }
 
