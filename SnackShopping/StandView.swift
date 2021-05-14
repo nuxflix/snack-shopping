@@ -18,10 +18,28 @@ private let counterMenu: [CounterSnack] = [
 ]
 
 struct StandView: View {
+    @State private var cart: [String: Int] = [:]
 
     private var menu: [CounterSnack] {
         var list = counterMenu
         return list
+    }
+
+    private var count: Int { cart.values.reduce(0, +) }
+    private var subtotal: Double {
+        menuSource().reduce(0) { partial, snack in
+            partial + snack.price * Double(cart[snack.id] ?? 0)
+        }
+    }
+    private var fee: Double { subtotal >= 35 ? 0 : (subtotal > 0 ? 3.5 : 0) }
+
+    private func menuSource() -> [CounterSnack] {
+        counterMenu
+    }
+
+    private func setQty(_ id: String, _ value: Int) {
+        let next = min(99, max(0, value))
+        if next == 0 { cart.removeValue(forKey: id) } else { cart[id] = next }
     }
 
     var body: some View {
@@ -52,6 +70,9 @@ struct StandView: View {
             Text(snack.name).font(.largeTitle)
             Text(String(format: "$%.2f", snack.price))
             Text(snack.note)
+            Button("Add to bag") {
+                setQty(snack.id, (cart[snack.id] ?? 0) + (cart[snack.id] == nil ? 1 : 1))
+            }
             Spacer()
         }
         .padding()
