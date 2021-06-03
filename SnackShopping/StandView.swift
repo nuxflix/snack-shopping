@@ -70,6 +70,7 @@ struct StandView: View {
             Text(snack.name).font(.largeTitle)
             Text(String(format: "$%.2f", snack.price))
             Text(snack.note)
+            Stepper("Quantity \(cart[snack.id] ?? 1)", onIncrement: { setQty(snack.id, (cart[snack.id] ?? 1) + 1) }, onDecrement: { setQty(snack.id, max(1, (cart[snack.id] ?? 1) - 1)) })
             Button("Add to bag") {
                 setQty(snack.id, (cart[snack.id] ?? 0) + (cart[snack.id] == nil ? 1 : 1))
             }
