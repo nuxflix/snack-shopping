@@ -50,6 +50,9 @@ struct StandView: View {
                         row(snack)
                     }
                 }
+                NavigationLink(destination: bag) {
+                    Text(count == 0 ? "Bag" : "Bag (\(count))")
+                }
             }
             .navigationTitle("Snack Shopping")
         }
@@ -77,6 +80,20 @@ struct StandView: View {
             Spacer()
         }
         .padding()
+    }
+
+    private var bag: some View {
+        List {
+            ForEach(menuSource().filter { (cart[$0.id] ?? 0) > 0 }) { snack in
+                HStack {
+                    Text(snack.name)
+                    Spacer()
+                    Text("\(cart[snack.id] ?? 0)")
+                }
+            }
+            Text(String(format: "Snacks $%.2f", subtotal))
+        }
+        .navigationTitle("Bag")
     }
 }
 
