@@ -88,7 +88,7 @@ struct StandView: View {
                 HStack {
                     Text(snack.name)
                     Spacer()
-                    Text("\(cart[snack.id] ?? 0)")
+                    Text(String(format: "$%.2f", snack.price * Double(cart[snack.id] ?? 0)))
                 }
             }
             Text(String(format: "Snacks $%.2f", subtotal))
