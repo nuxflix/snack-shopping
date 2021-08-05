@@ -18,10 +18,13 @@ private let counterMenu: [CounterSnack] = [
 ]
 
 struct StandView: View {
+    @State private var query = ""
     @State private var cart: [String: Int] = [:]
 
     private var menu: [CounterSnack] {
         var list = counterMenu
+        let needle = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        if !needle.isEmpty { list = list.filter { $0.name.lowercased().contains(needle) } }
         return list
     }
 
@@ -45,6 +48,7 @@ struct StandView: View {
     var body: some View {
         NavigationView {
             List {
+                TextField("Search snacks", text: $query)
                 ForEach(menu) { snack in
                     NavigationLink(destination: detail(snack)) {
                         row(snack)
