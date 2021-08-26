@@ -19,10 +19,12 @@ private let counterMenu: [CounterSnack] = [
 
 struct StandView: View {
     @State private var query = ""
+    @State private var category = "All"
     @State private var cart: [String: Int] = [:]
 
     private var menu: [CounterSnack] {
         var list = counterMenu
+        if category != "All" { list = list.filter { $0.category == category } }
         let needle = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         if !needle.isEmpty { list = list.filter { $0.name.lowercased().contains(needle) } }
         return list
@@ -49,6 +51,18 @@ struct StandView: View {
         NavigationView {
             List {
                 TextField("Search snacks", text: $query)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(["All", "Sweet", "Savory", "Fresh"], id: \.self) { name in
+                            Button(name) { category = name }
+                                .foregroundColor(category == name ? .white : .primary)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 6)
+                                .background(category == name ? Color.black : Color.gray.opacity(0.15))
+                                .cornerRadius(16)
+                        }
+                    }
+                }
                 ForEach(menu) { snack in
                     NavigationLink(destination: detail(snack)) {
                         row(snack)
