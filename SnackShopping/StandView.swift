@@ -79,6 +79,7 @@ struct StandView: View {
     private func row(_ snack: CounterSnack) -> some View {
         HStack {
             VStack(alignment: .leading) {
+                Text(snack.category).font(.caption).foregroundColor(.secondary)
                 Text(snack.name)
                 Text(String(format: "$%.2f", snack.price)).foregroundColor(.secondary)
             }
