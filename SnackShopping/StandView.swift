@@ -63,6 +63,7 @@ struct StandView: View {
                         }
                     }
                 }
+                Text("\(menu.count) snacks").font(.footnote).foregroundColor(.secondary)
                 ForEach(menu) { snack in
                     NavigationLink(destination: detail(snack)) {
                         row(snack)
