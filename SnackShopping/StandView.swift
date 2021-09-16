@@ -93,6 +93,10 @@ struct StandView: View {
             Text(snack.name).font(.largeTitle)
             Text(String(format: "$%.2f", snack.price))
             Text(snack.note)
+            Text("More \(snack.category.lowercased())").font(.headline)
+            ForEach(counterMenu.filter { $0.category == snack.category && $0.id != snack.id }) { other in
+                Text(other.name)
+            }
             Stepper("Quantity \(cart[snack.id] ?? 1)", onIncrement: { setQty(snack.id, (cart[snack.id] ?? 1) + 1) }, onDecrement: { setQty(snack.id, max(1, (cart[snack.id] ?? 1) - 1)) })
             Button("Add to bag") {
                 setQty(snack.id, (cart[snack.id] ?? 0) + (cart[snack.id] == nil ? 1 : 1))
