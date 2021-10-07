@@ -21,6 +21,8 @@ struct StandView: View {
     @State private var query = ""
     @State private var category = "All"
     @State private var cart: [String: Int] = [:]
+    @State private var customer = ""
+    @State private var address = ""
 
     private var menu: [CounterSnack] {
         var list = counterMenu
@@ -116,8 +118,17 @@ struct StandView: View {
                 }
             }
             Text(String(format: "Snacks $%.2f", subtotal))
+            NavigationLink(destination: checkoutForm) { Text("Checkout") }
         }
         .navigationTitle("Bag")
+    }
+
+    private var checkoutForm: some View {
+        Form {
+            TextField("Name", text: $customer)
+            TextField("Address", text: $address)
+        }
+        .navigationTitle("Checkout")
     }
 }
 
