@@ -21,6 +21,7 @@ struct StandView: View {
     @State private var query = ""
     @State private var category = "All"
     @State private var cart: [String: Int] = [:]
+    @State private var receipts: [String] = []
     @State private var customer = ""
     @State private var address = ""
 
@@ -127,6 +128,15 @@ struct StandView: View {
         Form {
             TextField("Name", text: $customer)
             TextField("Address", text: $address)
+            Button("Place order") {
+                let id = "SS-\(Int.random(in: 1000...9999))"
+                receipts.insert("\(id) \(customer)", at: 0)
+                cart = [:]
+            }
+            .disabled(customer.trimmingCharacters(in: .whitespaces).isEmpty || address.trimmingCharacters(in: .whitespaces).isEmpty)
+            Section("Earlier orders") {
+                ForEach(receipts, id: \.self) { Text($0) }
+            }
         }
         .navigationTitle("Checkout")
     }
