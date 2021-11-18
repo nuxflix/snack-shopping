@@ -111,6 +111,9 @@ struct StandView: View {
 
     private var bag: some View {
         List {
+            if count == 0 {
+                Text("The bag is empty. Add a snack from the counter.")
+            }
             ForEach(menuSource().filter { (cart[$0.id] ?? 0) > 0 }) { snack in
                 HStack {
                     Text(snack.name)
