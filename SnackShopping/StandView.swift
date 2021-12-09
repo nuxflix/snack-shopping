@@ -18,7 +18,7 @@ private let counterMenu: [CounterSnack] = [
 ]
 
 struct StandView: View {
-    @State private var query = ""
+    @State private var query = UserDefaults.standard.string(forKey: "snack-stand-query") ?? ""
     @State private var category = "All"
     @State private var cart: [String: Int] = [:]
     @State private var receipts: [String] = []
@@ -54,6 +54,7 @@ struct StandView: View {
         NavigationView {
             List {
                 TextField("Search snacks", text: $query)
+                    .onChange(of: query) { value in UserDefaults.standard.set(value, forKey: "snack-stand-query") }
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(["All", "Sweet", "Savory", "Fresh"], id: \.self) { name in
