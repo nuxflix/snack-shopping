@@ -123,6 +123,10 @@ struct StandView: View {
                 }
             }
             Text(String(format: "Snacks $%.2f", subtotal))
+            Text(String(format: "Delivery $%.2f", fee))
+            Text(fee == 0 && subtotal > 0 ? "Delivery is free on this bag." : "Delivery is free from $35.")
+                .font(.footnote)
+                .foregroundColor(.secondary)
             NavigationLink(destination: checkoutForm) { Text("Checkout") }
         }
         .navigationTitle("Bag")
