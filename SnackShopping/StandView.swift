@@ -127,6 +127,7 @@ struct StandView: View {
             Text(fee == 0 && subtotal > 0 ? "Delivery is free on this bag." : "Delivery is free from $35.")
                 .font(.footnote)
                 .foregroundColor(.secondary)
+            Button("Clear bag") { cart = [:]; setQty("", 0) }
             NavigationLink(destination: checkoutForm) { Text("Checkout") }
         }
         .navigationTitle("Bag")
