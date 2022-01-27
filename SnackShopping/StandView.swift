@@ -1,22 +1,5 @@
 import SwiftUI
 
-struct CounterSnack: Identifiable, Hashable {
-    var id: String
-    var name: String
-    var category: String
-    var price: Double
-    var note: String
-}
-
-private let counterMenu: [CounterSnack] = [
-    CounterSnack(id: "brownie", name: "Cocoa Brownie", category: "Sweet", price: 4.5, note: "A warm square with a soft middle."),
-    CounterSnack(id: "tart", name: "Lemon Tart", category: "Sweet", price: 5.0, note: "A short crust and a sharp lemon curd."),
-    CounterSnack(id: "twist", name: "Cheese Twist", category: "Savory", price: 3.1, note: "Puff pastry rolled with sharp cheese."),
-    CounterSnack(id: "lassi", name: "Mango Lassi", category: "Fresh", price: 3.8, note: "A cold mango and yogurt drink."),
-    CounterSnack(id: "chips", name: "Sea Salt Chips", category: "Savory", price: 2.75, note: "Crisp chips finished with flaky salt."),
-    CounterSnack(id: "cookie", name: "Peanut Cookie", category: "Sweet", price: 2.6, note: "A thick cookie with a salted peanut center."),
-]
-
 struct StandView: View {
     @State private var query = UserDefaults.standard.string(forKey: "snack-stand-query") ?? ""
     @State private var category = "All"
@@ -25,12 +8,11 @@ struct StandView: View {
     @State private var customer = ""
     @State private var address = ""
 
-    private var menu: [CounterSnack] {
-        var list = counterMenu
+    private var menu: [Snack] {
+        var list = SampleMenu.all
         if category != "All" { list = list.filter { $0.category == category } }
         let needle = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        if !needle.isEmpty { list = list.filter { $0.name.lowercased().contains(needle) } }
-        return list
+        return CatalogLogic.filter(SampleMenu.all, query: query, category: category, sort: sortName ? "name" : "price")
     }
 
     private var count: Int { cart.values.reduce(0, +) }
@@ -39,10 +21,10 @@ struct StandView: View {
             partial + snack.price * Double(cart[snack.id] ?? 0)
         }
     }
-    private var fee: Double { subtotal >= 35 ? 0 : (subtotal > 0 ? 3.5 : 0) }
+    private var fee: Double { Delivery.fee(for: subtotal) }
 
-    private func menuSource() -> [CounterSnack] {
-        counterMenu
+    private func menuSource() -> [Snack] {
+        SampleMenu.all
     }
 
     private func setQty(_ id: String, _ value: Int) {
@@ -81,7 +63,7 @@ struct StandView: View {
         }
     }
 
-    private func row(_ snack: CounterSnack) -> some View {
+    private func row(_ snack: Snack) -> some View {
         HStack {
             VStack(alignment: .leading) {
                 Text(snack.category).font(.caption).foregroundColor(.secondary)
@@ -91,14 +73,14 @@ struct StandView: View {
         }
     }
 
-    private func detail(_ snack: CounterSnack) -> some View {
+    private func detail(_ snack: Snack) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(snack.category).font(.caption).foregroundColor(.secondary)
             Text(snack.name).font(.largeTitle)
             Text(String(format: "$%.2f", snack.price))
-            Text(snack.note)
+            Text(snack.blurb)
             Text("More \(snack.category.lowercased())").font(.headline)
-            ForEach(counterMenu.filter { $0.category == snack.category && $0.id != snack.id }) { other in
+            ForEach(SampleMenu.all.filter { $0.category == snack.category && $0.id != snack.id }) { other in
                 Text(other.name)
             }
             Stepper("Quantity \(cart[snack.id] ?? 1)", onIncrement: { setQty(snack.id, (cart[snack.id] ?? 1) + 1) }, onDecrement: { setQty(snack.id, max(1, (cart[snack.id] ?? 1) - 1)) })
