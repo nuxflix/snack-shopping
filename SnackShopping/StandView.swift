@@ -3,6 +3,7 @@ import SwiftUI
 struct StandView: View {
     @State private var query = UserDefaults.standard.string(forKey: "snack-stand-query") ?? ""
     @State private var category = "All"
+    @State private var sortName = true
     @State private var cart: [String: Int] = [:]
     @State private var receipts: [String] = []
     @State private var customer = ""
@@ -49,6 +50,11 @@ struct StandView: View {
                         }
                     }
                 }
+                Picker("Sort", selection: $sortName) {
+                    Text("Name").tag(true)
+                    Text("Price").tag(false)
+                }
+                .pickerStyle(.segmented)
                 Text("\(menu.count) snacks").font(.footnote).foregroundColor(.secondary)
                 ForEach(menu) { snack in
                     NavigationLink(destination: detail(snack)) {
