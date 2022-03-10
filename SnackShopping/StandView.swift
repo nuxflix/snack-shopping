@@ -5,6 +5,7 @@ struct StandView: View {
     @State private var category = "All"
     @State private var sortName = true
     @State private var cart: [String: Int] = [:]
+    @State private var saved: Set<String> = []
     @State private var receipts: [String] = []
     @State private var customer = ""
     @State private var address = ""
@@ -75,6 +76,10 @@ struct StandView: View {
                 Text(snack.category).font(.caption).foregroundColor(.secondary)
                 Text(snack.name)
                 Text(String(format: "$%.2f", snack.price)).foregroundColor(.secondary)
+            }
+            Spacer()
+            Button(saved.contains(snack.id) ? "Saved" : "Save") {
+                if saved.contains(snack.id) { saved.remove(snack.id) } else { saved.insert(snack.id) }
             }
         }
     }
