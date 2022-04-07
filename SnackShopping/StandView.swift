@@ -4,7 +4,7 @@ struct StandView: View {
     @State private var query = UserDefaults.standard.string(forKey: "snack-stand-query") ?? ""
     @State private var category = "All"
     @State private var sortName = true
-    @State private var cart: [String: Int] = [:]
+    @State private var cart: [String: Int] = StandView.loadCart()
     @State private var saved: Set<String> = []
     @State private var receipts: [String] = []
     @State private var customer = ""
@@ -32,6 +32,9 @@ struct StandView: View {
     private func setQty(_ id: String, _ value: Int) {
         let next = min(99, max(0, value))
         if next == 0 { cart.removeValue(forKey: id) } else { cart[id] = next }
+        if let data = try? JSONEncoder().encode(cart) {
+            UserDefaults.standard.set(data, forKey: "snack-stand-cart")
+        }
     }
 
     var body: some View {
@@ -134,6 +137,7 @@ struct StandView: View {
                 let id = "SS-\(Int.random(in: 1000...9999))"
                 receipts.insert("\(id) \(customer)", at: 0)
                 cart = [:]
+                setQty("", 0)
             }
             .disabled(customer.trimmingCharacters(in: .whitespaces).isEmpty || address.trimmingCharacters(in: .whitespaces).isEmpty)
             Section("Earlier orders") {
@@ -141,6 +145,12 @@ struct StandView: View {
             }
         }
         .navigationTitle("Checkout")
+    }
+
+    private static func loadCart() -> [String: Int] {
+        guard let data = UserDefaults.standard.data(forKey: "snack-stand-cart"),
+              let saved = try? JSONDecoder().decode([String: Int].self, from: data) else { return [:] }
+        return saved
     }
 }
 
