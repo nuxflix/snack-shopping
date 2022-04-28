@@ -9,6 +9,7 @@ struct StandView: View {
     @State private var receipts: [String] = []
     @State private var customer = ""
     @State private var address = ""
+    @State private var note = ""
 
     private var menu: [Snack] {
         var list = SampleMenu.all
@@ -133,6 +134,7 @@ struct StandView: View {
         Form {
             TextField("Name", text: $customer)
             TextField("Address", text: $address)
+            TextField("Note", text: $note)
             Button("Place order") {
                 let id = "SS-\(Int.random(in: 1000...9999))"
                 receipts.insert("\(id) \(customer)", at: 0)
