@@ -9,6 +9,7 @@ struct StandView: View {
     @State private var receipts: [String] = []
     @State private var customer = ""
     @State private var address = ""
+    @State private var phone = ""
     @State private var note = ""
 
     private var menu: [Snack] {
@@ -133,6 +134,7 @@ struct StandView: View {
     private var checkoutForm: some View {
         Form {
             TextField("Name", text: $customer)
+            TextField("Phone", text: $phone)
             TextField("Address", text: $address)
             TextField("Note", text: $note)
             Button("Place order") {
