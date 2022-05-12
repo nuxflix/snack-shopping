@@ -10,6 +10,7 @@ struct StandView: View {
     @State private var customer = ""
     @State private var address = ""
     @State private var phone = ""
+    @State private var window = "Afternoon"
     @State private var note = ""
 
     private var menu: [Snack] {
@@ -136,6 +137,11 @@ struct StandView: View {
             TextField("Name", text: $customer)
             TextField("Phone", text: $phone)
             TextField("Address", text: $address)
+            Picker("Window", selection: $window) {
+                Text("Morning").tag("Morning")
+                Text("Afternoon").tag("Afternoon")
+                Text("Evening").tag("Evening")
+            }
             TextField("Note", text: $note)
             Button("Place order") {
                 let id = "SS-\(Int.random(in: 1000...9999))"
