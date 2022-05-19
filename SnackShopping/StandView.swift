@@ -33,7 +33,7 @@ struct StandView: View {
     }
 
     private func setQty(_ id: String, _ value: Int) {
-        let next = min(99, max(0, value))
+        let next = min(20, max(0, value))
         if next == 0 { cart.removeValue(forKey: id) } else { cart[id] = next }
         if let data = try? JSONEncoder().encode(cart) {
             UserDefaults.standard.set(data, forKey: "snack-stand-cart")
