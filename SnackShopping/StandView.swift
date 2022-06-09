@@ -104,6 +104,9 @@ struct StandView: View {
             Button("Add to bag") {
                 setQty(snack.id, (cart[snack.id] ?? 0) + (cart[snack.id] == nil ? 1 : 1))
             }
+            if menuSource().first(where: { $0.id == snack.id }) == nil {
+                Text("That snack is gone")
+            }
             Spacer()
         }
         .padding()
