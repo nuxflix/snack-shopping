@@ -88,6 +88,7 @@ struct StandView: View {
                 if saved.contains(snack.id) { saved.remove(snack.id) } else { saved.insert(snack.id) }
             }
         }
+        .accessibilityElement(children: .combine)
     }
 
     private func detail(_ snack: Snack) -> some View {
