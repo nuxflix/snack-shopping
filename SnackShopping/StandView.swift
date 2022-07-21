@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 struct StandView: View {
     @State private var query = UserDefaults.standard.string(forKey: "snack-stand-query") ?? ""
@@ -104,6 +105,7 @@ struct StandView: View {
             Stepper("Quantity \(cart[snack.id] ?? 1)", onIncrement: { setQty(snack.id, (cart[snack.id] ?? 1) + 1) }, onDecrement: { setQty(snack.id, max(1, (cart[snack.id] ?? 1) - 1)) })
             Button("Add to bag") {
                 setQty(snack.id, (cart[snack.id] ?? 0) + (cart[snack.id] == nil ? 1 : 1))
+                UIImpactFeedbackGenerator(style: .light).impactOccurred()
             }
             if menuSource().first(where: { $0.id == snack.id }) == nil {
                 Text("That snack is gone")
