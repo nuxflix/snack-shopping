@@ -15,6 +15,8 @@
 		AF63D98D9436DD3E13F92484 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF97A5B058B6150522B75B7; };
 		6CD90056D38C8811D2A6AF64 /* SnackShoppingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF983F6A4CBD9F7EBB95D3B; };
 		D84B70D72C0DF4C663FA7BBB /* StandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144628C130B0CB25824AA2E; };
+		2CE3F8F4C753FB5BECBDB91A /* PriceMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9311A5FDF1FD8BD45F1F7B; };
+		A0FD247CA37E466137B9F960 /* ShopLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03BFA5DC115790EFF3C130B; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		4EF97A5B058B6150522B75B7 /* Snack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
 		BEF983F6A4CBD9F7EBB95D3B /* SnackShoppingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackShoppingApp.swift; sourceTree = "<group>"; };
 		5144628C130B0CB25824AA2E /* StandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandView.swift; sourceTree = "<group>"; };
+		BA9311A5FDF1FD8BD45F1F7B /* PriceMatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceMatchTests.swift; sourceTree = "<group>"; };
+		D03BFA5DC115790EFF3C130B /* ShopLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopLogicTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				82CF2A43A7100F086D7FCFDD /* SnackShopping */,
+				A0937472EE5878FA82CB0F7E /* SnackShoppingTests */,
 				547D009064F7C3F13BEF3460 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				84337AD8D27FCD69AF2C4FC2 /* SnackShopping.app */,
+				DFDED23FA58339F9273F6C84 /* SnackShoppingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +93,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A0937472EE5878FA82CB0F7E /* SnackShoppingTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA9311A5FDF1FD8BD45F1F7B /* PriceMatchTests.swift */,
+				D03BFA5DC115790EFF3C130B /* ShopLogicTests.swift */,
+			);
+			path = SnackShoppingTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,6 +122,24 @@
 			productReference = 84337AD8D27FCD69AF2C4FC2 /* SnackShopping.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A700229C3AC2DAE057FE5B27 /* SnackShoppingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F471B4923D46E58DCE40A0E /* Build configuration list for PBXNativeTarget "SnackShoppingTests" */;
+			buildPhases = (
+				253B7D7D35FBA95AB93123FF /* Sources */,
+				56361F60CA31B6C99997FAC5 /* Frameworks */,
+				CEF6360BABEEC5F0BD5D8647 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A0AB56B64A077C4F9DAD608 /* PBXTargetDependency */,
+			);
+			name = SnackShoppingTests;
+			productName = SnackShoppingTests;
+			productReference = DFDED23FA58339F9273F6C84 /* SnackShoppingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -119,6 +152,10 @@
 				TargetAttributes = {
 					E3435DDA2687639586BF0B70 = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					A700229C3AC2DAE057FE5B27 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = E3435DDA2687639586BF0B70;
 					};
 				};
 			};
@@ -136,6 +173,7 @@
 			projectRoot = "";
 			targets = (
 				E3435DDA2687639586BF0B70 /* SnackShopping */,
+				A700229C3AC2DAE057FE5B27 /* SnackShoppingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -146,6 +184,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6070B9CF28E71610AA267AE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF6360BABEEC5F0BD5D8647 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +211,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		253B7D7D35FBA95AB93123FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CE3F8F4C753FB5BECBDB91A /* PriceMatchTests.swift in Sources */,
+				A0FD247CA37E466137B9F960 /* ShopLogicTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXContainerItemProxy section */
+		323C3B257A357C9ED069C500 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3435DDA2687639586BF0B70;
+			remoteInfo = SnackShopping;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXTargetDependency section */
+		5A0AB56B64A077C4F9DAD608 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3435DDA2687639586BF0B70 /* SnackShopping */;
+			targetProxy = 323C3B257A357C9ED069C500 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		35D0387E8A36F09B2F1874B0 /* Debug */ = {
@@ -272,6 +344,48 @@
 			};
 			name = Release;
 		};
+		43BC741CE4236F686408D1C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.snackshopping.app.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnackShopping.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SnackShopping";
+			};
+			name = Debug;
+		};
+		2BEDCF9AB54FB630A577D035 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.snackshopping.app.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnackShopping.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SnackShopping";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -289,6 +403,15 @@
 			buildConfigurations = (
 				5129F47484156CFE0A2B0B98 /* Debug */,
 				0DC4A93B97866A7C66FF0056 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0F471B4923D46E58DCE40A0E /* Build configuration list for PBXNativeTarget "SnackShoppingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43BC741CE4236F686408D1C0 /* Debug */,
+				2BEDCF9AB54FB630A577D035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
