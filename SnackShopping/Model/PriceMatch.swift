@@ -80,14 +80,14 @@ enum PriceMatch {
     private static func anchorFor(name: String, category: String, anchors: [PriceAnchor]) -> PriceAnchor? {
         let text = "\(name) \(category)".lowercased()
         let preferred: String
-        if text.range(of: "cake|cookie|sweet|chocolate|brownie|ice|pudding|pie|donut|mochi|dessert", options: .regularExpression) != nil {
+        if text.range(of: "apple|fruit|berry|mango|strawberry|citrus", options: .regularExpression) != nil {
+            preferred = "Strawberry"
+        } else if text.range(of: "cake|cookie|sweet|chocolate|brownie|ice|pudding|pie|donut|mochi|dessert", options: .regularExpression) != nil {
             preferred = "Ice Cream"
         } else if text.range(of: "coffee|tea", options: .regularExpression) != nil {
             preferred = "Nescafe Coffee"
         } else if text.range(of: "juice|smoothie|drink|lassi|beverage", options: .regularExpression) != nil {
             preferred = "Juice"
-        } else if text.range(of: "apple|fruit|berry|mango|strawberry|citrus", options: .regularExpression) != nil {
-            preferred = "Strawberry"
         } else if text.contains("honey") {
             preferred = "Honey Jar"
         } else {
