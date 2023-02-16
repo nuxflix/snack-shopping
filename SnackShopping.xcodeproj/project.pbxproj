@@ -15,6 +15,11 @@
 		AF63D98D9436DD3E13F92484 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF97A5B058B6150522B75B7; };
 		6CD90056D38C8811D2A6AF64 /* SnackShoppingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF983F6A4CBD9F7EBB95D3B; };
 		D84B70D72C0DF4C663FA7BBB /* StandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144628C130B0CB25824AA2E; };
+		51C6DEFD4DF30056263C04CA /* CartStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C0B88B1FEDD1636C023000; };
+		2B43079037D1E083C2580A3A /* CatalogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E58C376E67B67498C124D33; };
+		DDA9A5F44A17CED2DDAD9143 /* FavoritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91AF2151E4FDA280710D8AD; };
+		3811B1B59F7F74B4B5B7845A /* OrderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C044D3323F6A65CDCF4318F6; };
+		1C1061D138723AF488ECDF53 /* ShopRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E2B0B9C5EF7ADCCC4E7CBF; };
 		A7AB3F1351DF036F513548D8 /* ShopTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA477F67659F4C9300F1025; };
 		2CE3F8F4C753FB5BECBDB91A /* PriceMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9311A5FDF1FD8BD45F1F7B; };
 		A0FD247CA37E466137B9F960 /* ShopLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03BFA5DC115790EFF3C130B; };
@@ -31,6 +36,11 @@
 		4EF97A5B058B6150522B75B7 /* Snack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
 		BEF983F6A4CBD9F7EBB95D3B /* SnackShoppingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackShoppingApp.swift; sourceTree = "<group>"; };
 		5144628C130B0CB25824AA2E /* StandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandView.swift; sourceTree = "<group>"; };
+		E3C0B88B1FEDD1636C023000 /* CartStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartStore.swift; sourceTree = "<group>"; };
+		5E58C376E67B67498C124D33 /* CatalogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogStore.swift; sourceTree = "<group>"; };
+		B91AF2151E4FDA280710D8AD /* FavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStore.swift; sourceTree = "<group>"; };
+		C044D3323F6A65CDCF4318F6 /* OrderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStore.swift; sourceTree = "<group>"; };
+		C1E2B0B9C5EF7ADCCC4E7CBF /* ShopRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopRouter.swift; sourceTree = "<group>"; };
 		3AA477F67659F4C9300F1025 /* ShopTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTheme.swift; sourceTree = "<group>"; };
 		BA9311A5FDF1FD8BD45F1F7B /* PriceMatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceMatchTests.swift; sourceTree = "<group>"; };
 		D03BFA5DC115790EFF3C130B /* ShopLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopLogicTests.swift; sourceTree = "<group>"; };
@@ -78,6 +88,7 @@
 				BEF983F6A4CBD9F7EBB95D3B /* SnackShoppingApp.swift */,
 				5144628C130B0CB25824AA2E /* StandView.swift */,
 				07CF157A2886D8BFC3632681 /* Model */,
+				1579EFA7989F5431880CF75D /* Store */,
 				5FD25E3B1685738AB6DBD0D1 /* Theme */,
 				A790BB479B2477E3A634A1EB /* Assets.xcassets */,
 			);
@@ -94,6 +105,18 @@
 				4EF97A5B058B6150522B75B7 /* Snack.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1579EFA7989F5431880CF75D /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				E3C0B88B1FEDD1636C023000 /* CartStore.swift */,
+				5E58C376E67B67498C124D33 /* CatalogStore.swift */,
+				B91AF2151E4FDA280710D8AD /* FavoritesStore.swift */,
+				C044D3323F6A65CDCF4318F6 /* OrderStore.swift */,
+				C1E2B0B9C5EF7ADCCC4E7CBF /* ShopRouter.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		5FD25E3B1685738AB6DBD0D1 /* Theme */ = {
@@ -219,6 +242,11 @@
 				AF63D98D9436DD3E13F92484 /* Snack.swift in Sources */,
 				6CD90056D38C8811D2A6AF64 /* SnackShoppingApp.swift in Sources */,
 				D84B70D72C0DF4C663FA7BBB /* StandView.swift in Sources */,
+				51C6DEFD4DF30056263C04CA /* CartStore.swift in Sources */,
+				2B43079037D1E083C2580A3A /* CatalogStore.swift in Sources */,
+				DDA9A5F44A17CED2DDAD9143 /* FavoritesStore.swift in Sources */,
+				3811B1B59F7F74B4B5B7845A /* OrderStore.swift in Sources */,
+				1C1061D138723AF488ECDF53 /* ShopRouter.swift in Sources */,
 				A7AB3F1351DF036F513548D8 /* ShopTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
