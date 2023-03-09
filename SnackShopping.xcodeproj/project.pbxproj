@@ -21,6 +21,7 @@
 		3811B1B59F7F74B4B5B7845A /* OrderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C044D3323F6A65CDCF4318F6; };
 		1C1061D138723AF488ECDF53 /* ShopRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E2B0B9C5EF7ADCCC4E7CBF; };
 		A7AB3F1351DF036F513548D8 /* ShopTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA477F67659F4C9300F1025; };
+		273737FD55F677435C3FFAE2 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB8457B46669C78713DB10E; };
 		2CE3F8F4C753FB5BECBDB91A /* PriceMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9311A5FDF1FD8BD45F1F7B; };
 		A0FD247CA37E466137B9F960 /* ShopLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03BFA5DC115790EFF3C130B; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		C044D3323F6A65CDCF4318F6 /* OrderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStore.swift; sourceTree = "<group>"; };
 		C1E2B0B9C5EF7ADCCC4E7CBF /* ShopRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopRouter.swift; sourceTree = "<group>"; };
 		3AA477F67659F4C9300F1025 /* ShopTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTheme.swift; sourceTree = "<group>"; };
+		6EB8457B46669C78713DB10E /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		BA9311A5FDF1FD8BD45F1F7B /* PriceMatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceMatchTests.swift; sourceTree = "<group>"; };
 		D03BFA5DC115790EFF3C130B /* ShopLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopLogicTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +92,7 @@
 				07CF157A2886D8BFC3632681 /* Model */,
 				1579EFA7989F5431880CF75D /* Store */,
 				5FD25E3B1685738AB6DBD0D1 /* Theme */,
+				23ABE4D65145839886E7AA9F /* Views */,
 				A790BB479B2477E3A634A1EB /* Assets.xcassets */,
 			);
 			path = SnackShopping;
@@ -125,6 +128,14 @@
 				3AA477F67659F4C9300F1025 /* ShopTheme.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		23ABE4D65145839886E7AA9F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6EB8457B46669C78713DB10E /* Components.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A0937472EE5878FA82CB0F7E /* SnackShoppingTests */ = {
@@ -248,6 +259,7 @@
 				3811B1B59F7F74B4B5B7845A /* OrderStore.swift in Sources */,
 				1C1061D138723AF488ECDF53 /* ShopRouter.swift in Sources */,
 				A7AB3F1351DF036F513548D8 /* ShopTheme.swift in Sources */,
+				273737FD55F677435C3FFAE2 /* Components.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
