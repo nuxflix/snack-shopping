@@ -22,6 +22,7 @@
 		1C1061D138723AF488ECDF53 /* ShopRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E2B0B9C5EF7ADCCC4E7CBF; };
 		A7AB3F1351DF036F513548D8 /* ShopTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA477F67659F4C9300F1025; };
 		273737FD55F677435C3FFAE2 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB8457B46669C78713DB10E; };
+		3D572DBF3F248B161316FEA3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463A357E331A799B997EE49; };
 		2CE3F8F4C753FB5BECBDB91A /* PriceMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9311A5FDF1FD8BD45F1F7B; };
 		A0FD247CA37E466137B9F960 /* ShopLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03BFA5DC115790EFF3C130B; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		C1E2B0B9C5EF7ADCCC4E7CBF /* ShopRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopRouter.swift; sourceTree = "<group>"; };
 		3AA477F67659F4C9300F1025 /* ShopTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTheme.swift; sourceTree = "<group>"; };
 		6EB8457B46669C78713DB10E /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		3463A357E331A799B997EE49 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BA9311A5FDF1FD8BD45F1F7B /* PriceMatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceMatchTests.swift; sourceTree = "<group>"; };
 		D03BFA5DC115790EFF3C130B /* ShopLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopLogicTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				6EB8457B46669C78713DB10E /* Components.swift */,
+				3463A357E331A799B997EE49 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				1C1061D138723AF488ECDF53 /* ShopRouter.swift in Sources */,
 				A7AB3F1351DF036F513548D8 /* ShopTheme.swift in Sources */,
 				273737FD55F677435C3FFAE2 /* Components.swift in Sources */,
+				3D572DBF3F248B161316FEA3 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
