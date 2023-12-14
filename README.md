@@ -5,3 +5,9 @@ Snack Shopping is an iPhone shop for snacks. The shelf uses the shop's own color
 The interaction ideas follow the Jetsnack Compose sample: a custom palette, category tiles, and a large snack photo. The menu in this version is the built-in counter.
 
 Open `SnackShopping.xcodeproj` in Xcode 15 or later and run it on an iPhone simulator. The project targets iOS 16.
+
+## Layout
+
+- `SnackShopping/Views` — home, search, snack, bag, checkout, and receipt
+- `SnackShopping/Theme` — the shop colors
+- `SnackShopping/Store` — the bag, saved snacks, and receipts on this phone
