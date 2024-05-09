@@ -13,6 +13,7 @@
 		9C0E01526ACD79EEA2F2EB9D /* PriceMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD235FBA4C557ACB825D41D3; };
 		A789966C41B5F5735BDFEF65 /* SampleMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0AB7F37ADAC42B67D832E; };
 		AF63D98D9436DD3E13F92484 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF97A5B058B6150522B75B7; };
+		C59EDDE29423242E96BFD7A2 /* CatalogLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC8E3C4E2D97C2C91E2AD0; };
 		6CD90056D38C8811D2A6AF64 /* SnackShoppingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF983F6A4CBD9F7EBB95D3B; };
 		51C6DEFD4DF30056263C04CA /* CartStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C0B88B1FEDD1636C023000; };
 		2B43079037D1E083C2580A3A /* CatalogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E58C376E67B67498C124D33; };
@@ -41,6 +42,7 @@
 		DD235FBA4C557ACB825D41D3 /* PriceMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceMatch.swift; sourceTree = "<group>"; };
 		8BE0AB7F37ADAC42B67D832E /* SampleMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMenu.swift; sourceTree = "<group>"; };
 		4EF97A5B058B6150522B75B7 /* Snack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
+		3FDC8E3C4E2D97C2C91E2AD0 /* CatalogLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogLoader.swift; sourceTree = "<group>"; };
 		BEF983F6A4CBD9F7EBB95D3B /* SnackShoppingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackShoppingApp.swift; sourceTree = "<group>"; };
 		E3C0B88B1FEDD1636C023000 /* CartStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartStore.swift; sourceTree = "<group>"; };
 		5E58C376E67B67498C124D33 /* CatalogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogStore.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				BEF983F6A4CBD9F7EBB95D3B /* SnackShoppingApp.swift */,
 				07CF157A2886D8BFC3632681 /* Model */,
+				D51873577B98C02B562C02AD /* Services */,
 				1579EFA7989F5431880CF75D /* Store */,
 				5FD25E3B1685738AB6DBD0D1 /* Theme */,
 				23ABE4D65145839886E7AA9F /* Views */,
@@ -119,6 +122,14 @@
 				4EF97A5B058B6150522B75B7 /* Snack.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D51873577B98C02B562C02AD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3FDC8E3C4E2D97C2C91E2AD0 /* CatalogLoader.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		1579EFA7989F5431880CF75D /* Store */ = {
@@ -269,6 +280,7 @@
 				9C0E01526ACD79EEA2F2EB9D /* PriceMatch.swift in Sources */,
 				A789966C41B5F5735BDFEF65 /* SampleMenu.swift in Sources */,
 				AF63D98D9436DD3E13F92484 /* Snack.swift in Sources */,
+				C59EDDE29423242E96BFD7A2 /* CatalogLoader.swift in Sources */,
 				6CD90056D38C8811D2A6AF64 /* SnackShoppingApp.swift in Sources */,
 				51C6DEFD4DF30056263C04CA /* CartStore.swift in Sources */,
 				2B43079037D1E083C2580A3A /* CatalogStore.swift in Sources */,
