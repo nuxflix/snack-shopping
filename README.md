@@ -8,3 +8,4 @@ Open `SnackShopping.xcodeproj` in Xcode 15 or later and run it on an iPhone simu
 
 Photos and prices now come from TheMealDB, DummyJSON, Open Food Facts, and Frankfurter. See docs/data-sources.md.
 Delivery is $3.50, or free once the bag reaches $35.
+Pull to refresh on the home shelf when a price looks stale.
