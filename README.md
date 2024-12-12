@@ -11,3 +11,4 @@ Delivery is $3.50, or free once the bag reaches $35.
 Pull to refresh on the home shelf when a price looks stale.
 Picked for you follows the snacks you just opened.
 Save a snack with the heart, then find it under Saved.
+Search counts the snacks that match.
