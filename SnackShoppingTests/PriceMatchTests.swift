@@ -22,6 +22,12 @@ final class PriceMatchTests: XCTestCase {
         XCTAssertEqual(chosen.amount, PriceMatch.roundMoney(1.24 / 0.9))
     }
 
+    func testACakeNamedAfterFruitUsesTheDessertPrice() {
+        let chosen = PriceMatch.choose(name: "Apple cake", category: "Dessert", offers: [], anchors: anchors, unitsPerUsd: ["EUR": 0.9])
+        XCTAssertEqual(chosen.label, "Ice Cream")
+        XCTAssertEqual(chosen.amount, 5.49)
+    }
+
     func testADessertWithoutAShelfMatchUsesIceCream() {
         let chosen = PriceMatch.choose(name: "Parkin Cake", category: "Dessert", offers: [], anchors: anchors, unitsPerUsd: ["EUR": 0.9])
         XCTAssertEqual(chosen.source, "dummyjson")
