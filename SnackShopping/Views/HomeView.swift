@@ -79,8 +79,8 @@ struct HomeView: View {
             if let featured = CatalogLogic.filter(catalog.snacks, category: "Sweet", sort: sort, savedIDs: favorites.ids).first ?? catalog.snacks.first {
                 featuredCard(featured)
             }
-            if catalog.usingSample, let message = catalog.message {
-                Text(message)
+            if catalog.usingSample {
+                Text(catalog.message ?? "Showing the counter samples until the live menu loads.")
                     .font(.footnote)
                     .foregroundStyle(ShopTheme.muted)
             }
