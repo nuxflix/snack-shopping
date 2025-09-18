@@ -3,6 +3,7 @@ import SwiftUI
 struct CartView: View {
     @EnvironmentObject private var catalog: CatalogStore
     @EnvironmentObject private var cart: CartStore
+    @EnvironmentObject private var router: ShopRouter
 
     private var lines: [(snack: Snack, quantity: Int)] {
         cart.lines(in: catalog.snacks)
@@ -23,6 +24,9 @@ struct CartView: View {
                     EmptyNote(title: "Opening the bag", message: "The menu is still loading.")
                 } else if lines.isEmpty {
                     EmptyNote(title: "The bag is empty", message: "Add a snack from the shelf and it will wait here.")
+                    Button("Browse the shelf") { router.tab = .home }
+                        .font(.subheadline.weight(.bold))
+                        .foregroundStyle(ShopTheme.coral)
                 } else {
                     ForEach(lines, id: \.snack.id) { line in
                         lineRow(line.snack, line.quantity)
