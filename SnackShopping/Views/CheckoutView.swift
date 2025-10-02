@@ -68,6 +68,7 @@ struct CheckoutView: View {
             .padding(18)
         }
         .background(ShopTheme.paper)
+        .scrollDismissesKeyboard(.interactively)
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .navigationBar)
         .onAppear(perform: loadDraft)
