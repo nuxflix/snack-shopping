@@ -21,6 +21,11 @@ struct SearchView: View {
                     TextField("Search snacks, ingredients, or recipes", text: $query)
                         .textInputAutocapitalization(.never)
                         .autocorrectionDisabled()
+                    if !query.isEmpty {
+                        Button("Clear") { query = "" }
+                            .font(.subheadline.weight(.bold))
+                            .foregroundStyle(ShopTheme.coral)
+                    }
                 }
                 .padding(14)
                 .background(.white)
@@ -85,5 +90,6 @@ struct SearchView: View {
             .padding(.bottom, 12)
         }
         .background(ShopTheme.paper)
+        .scrollDismissesKeyboard(.interactively)
     }
 }
