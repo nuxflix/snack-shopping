@@ -87,7 +87,7 @@ struct DetailView: View {
                             .clipShape(Capsule())
                     }
                     .buttonStyle(.plain)
-                    .accessibilityLabel("Add to cart")
+                    .accessibilityLabel("Add \(quantity) to cart")
                 }
                 .padding(.top, 4)
                 related(to: snack)
