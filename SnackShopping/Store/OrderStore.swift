@@ -2,7 +2,7 @@ import Combine
 import Foundation
 
 struct OrderLine: Codable, Hashable, Identifiable {
-    var id: String { name }
+    var id: String
     var name: String
     var quantity: Int
     var price: Double
@@ -41,7 +41,9 @@ final class OrderStore: ObservableObject {
         window: String,
         lines: [(snack: Snack, quantity: Int)]
     ) -> PlacedOrder {
-        let orderLines = lines.map { OrderLine(name: $0.snack.name, quantity: $0.quantity, price: $0.snack.price) }
+        let orderLines = lines.map {
+            OrderLine(id: UUID().uuidString, name: $0.snack.name, quantity: $0.quantity, price: $0.snack.price)
+        }
         let subtotal = orderLines.reduce(0) { $0 + $1.price * Double($1.quantity) }
         let delivery = Delivery.fee(for: subtotal)
         let order = PlacedOrder(
