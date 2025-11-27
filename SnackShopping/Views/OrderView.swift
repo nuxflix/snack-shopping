@@ -15,6 +15,7 @@ struct OrderView: View {
                     Text(order.id)
                         .font(ShopTheme.display(34))
                         .foregroundStyle(ShopTheme.ink)
+                        .accessibilityAddTraits(.isHeader)
                     Text("Thanks, \(order.customer). We will bring this to \(order.address) in the \(order.window.lowercased()).")
                         .foregroundStyle(ShopTheme.ink)
                     ForEach(order.lines) { line in
