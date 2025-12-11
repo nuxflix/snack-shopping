@@ -23,7 +23,7 @@ The preview walks the iPhone screens: the home shelf, a search for pancakes, the
 
 Photos come from TheMealDB and DummyJSON. Prices come from Open Food Facts shelf prices, converted to US dollars with Frankfurter, or from DummyJSON grocery prices when a shelf name does not match. The snack page names the source. Details are in [docs/data-sources.md](docs/data-sources.md).
 
-Delivery is the shop's own rule: $3.50, or free once snacks in the bag reach $35.
+Delivery is the shop's own rule: $3.50, or free once snacks in the bag reach $35. If the feeds do not answer, the phone keeps the built-in counter samples until you pull to refresh.
 
 ## Run
 
